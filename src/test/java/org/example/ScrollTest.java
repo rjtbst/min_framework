@@ -36,25 +36,29 @@ public class ScrollTest {
 
     @BeforeMethod
     public void setup(Method method) {
-        test = ex.createTest(method.getName());
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 5);
+       // wait = new WebDriverWait(driver, 5);
         driver.manage().window().maximize();
-        driver.get("https://amazon.in");
+        driver.get("https://www.testingbaba.com/newdemo.html");
     }
 
     @Test
-    public void scrollTest(){
-        JavascriptExecutor jsExecuter = (JavascriptExecutor) driver;
-       WebElement aboutUs_btn=  driver.findElement(By.xpath("//a[text()='About Us']"));
-        jsExecuter.executeScript("arguments[0].scrollIntoView(true);",aboutUs_btn);
-        test.log(Status.INFO,"scrolled to about us link");
-        jsExecuter.executeScript("arguments[0].click();",aboutUs_btn);      //variable args
-
-        takeItsScreenshot();
-        test.pass("screenshot taken");
+    public void title(){
+       
     }
+
+//    @Test
+//    public void scrollTest(){
+//        JavascriptExecutor jsExecuter = (JavascriptExecutor) driver;
+//       WebElement aboutUs_btn=  driver.findElement(By.xpath("//a[text()='About Us']"));
+//        jsExecuter.executeScript("arguments[0].scrollIntoView(true);",aboutUs_btn);
+//        test.log(Status.INFO,"scrolled to about us link");
+//        jsExecuter.executeScript("arguments[0].click();",aboutUs_btn);      //variable args
+//
+//        takeItsScreenshot();
+//        test.pass("screenshot taken");
+//    }
 
     public static void takeItsScreenshot() {
         try {
@@ -66,6 +70,8 @@ public class ScrollTest {
             System.out.println("exception occured while taking screenshot: " + e);
         }
     }
+
+
 
     @AfterMethod
     public void tearDown() {

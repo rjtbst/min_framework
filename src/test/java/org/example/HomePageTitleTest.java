@@ -108,7 +108,6 @@ public class HomePageTitleTest   {
     public void testingMultiData(Map<String, String> data) {
         System.out.println(data.get("userName"));
         System.out.println(data.get("password"));
-
     }
 
     @Test(dependsOnMethods = {"verifyHomePageTitle"})

@@ -26,7 +26,7 @@ public class DockerDemoTest {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         // String browser = System.getProperty("browser");
         capabilities.setBrowserName("chrome");
-        driver = new RemoteWebDriver(new URI(" http://localhost:4444").toURL(), capabilities);
+        driver = new RemoteWebDriver(new URI("http://localhost:4444").toURL(), capabilities);
         wait = new WebDriverWait(driver, 10);
         driver.manage().window().maximize();
         driver.get("https://opensource-demo.orangehrmlive.com/");
